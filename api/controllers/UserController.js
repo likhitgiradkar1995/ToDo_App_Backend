@@ -29,7 +29,7 @@ module.exports = {
         try {
             const usr = await User.findOne({
                 id: req.params.id
-            });
+            }).populate('tasks');
             return res.ok(usr);
         }
         catch (err) {
